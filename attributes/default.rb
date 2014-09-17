@@ -19,18 +19,21 @@
 
 default["i3"]["packages"] = value_for_platform_family(
   "debian" => %w(
+    rxvt-unicode
     i3
     i3lock
     i3status
     suckless-tools
   ),
   "ubuntu" => %w(
+    rxvt-unicode
     i3
     i3lock
     i3status
     suckless-tools
   ),
   "suse" => %w(
+    rxvt-unicode
     i3
     i3lock
     i3statuS
