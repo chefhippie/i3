@@ -23,14 +23,18 @@ default["i3"]["packages"] = value_for_platform_family(
     i3
     i3lock
     i3status
-    suckless-tools
+    dmenu
+    nitrogen
+    dunst
   ),
   "ubuntu" => %w(
     rxvt-unicode
     i3
     i3lock
     i3status
-    suckless-tools
+    dmenu
+    nitrogen
+    dunst
   ),
   "suse" => %w(
     rxvt-unicode
@@ -38,17 +42,12 @@ default["i3"]["packages"] = value_for_platform_family(
     i3lock
     i3statuS
     dmenu
-    lsw
-    slock
-    st
-    sselp
-    swarp
-    tabbed
-    wmname
+    nitrogen
+    dunst
   )
 )
 
-default["i3"]["zypper"]["alias"] = "utilities-suckless"
-default["i3"]["zypper"]["title"] = "Suckless.org Utilities"
-default["i3"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/utilities:/suckless/openSUSE_#{node["platform_version"]}/"
+default["i3"]["zypper"]["alias"] = "x11-windowmanagers"
+default["i3"]["zypper"]["title"] = "X11 windowmanagers"
+default["i3"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/X11:/Utilities/openSUSE_#{node["platform_version"]}/"
 default["i3"]["zypper"]["key"] = "#{node["i3"]["zypper"]["repo"]}repodata/repomd.xml.key"
