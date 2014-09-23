@@ -48,6 +48,6 @@ default["i3"]["packages"] = value_for_platform_family(
 )
 
 default["i3"]["zypper"]["alias"] = "x11-windowmanagers"
-default["i3"]["zypper"]["title"] = "X11 windowmanagers"
-default["i3"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/X11:/Utilities/openSUSE_#{node["platform_version"]}/"
+default["i3"]["zypper"]["title"] = "X11 Windowmanagers"
+default["i3"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/X11:/windowmanagers/openSUSE_#{node["platform_version"]}/"
 default["i3"]["zypper"]["key"] = "#{node["i3"]["zypper"]["repo"]}repodata/repomd.xml.key"
