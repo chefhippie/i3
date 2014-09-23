@@ -44,6 +44,7 @@ default["i3"]["packages"] = value_for_platform_family(
     dmenu
     nitrogen
     dunst
+    alsa-utils
   )
 )
 
