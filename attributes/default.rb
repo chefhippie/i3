@@ -45,6 +45,7 @@ default["i3"]["packages"] = value_for_platform_family(
     nitrogen
     dunst
     alsa-utils
+    ImageMagick
   )
 )
 
