@@ -47,6 +47,7 @@ default["i3"]["packages"] = value_for_platform_family(
     libnotify-tools
     alsa-utils
     ImageMagick
+    geeqie
   )
 )
 
