@@ -45,11 +45,4 @@ template node["i3"]["sysconfig_file"] do
   variables(
     node["i3"]
   )
-
-  notifies :restart, "service[i3]"
-end
-
-service "i3" do
-  service_name node["i3"]["service_name"]
-  action [:enable, :start]
 end

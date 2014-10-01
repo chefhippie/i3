@@ -51,7 +51,6 @@ default["i3"]["packages"] = value_for_platform_family(
   )
 )
 
-default["i3"]["service_name"] = "xdm"
 default["i3"]["sysconfig_file"] = "/etc/sysconfig/windowmanager"
 
 default["i3"]["zypper"]["alias"] = "x11-windowmanagers"
