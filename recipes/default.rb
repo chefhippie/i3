@@ -35,3 +35,21 @@ node["i3"]["packages"].each do |name|
     action :install
   end
 end
+
+template node["i3"]["sysconfig_file"] do
+  source "sysconfig.conf.erb"
+  owner "root"
+  group "root"
+  mode 0644
+
+  variables(
+    node["i3"]
+  )
+
+  notifies :restart, "service[i3]"
+end
+
+service "i3" do
+  service_name node["i3"]["service_name"]
+  action [:enable, :start]
+end
