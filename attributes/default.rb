@@ -42,7 +42,7 @@ default["i3"]["packages"] = value_for_platform_family(
     i3lock
     i3statuS
     dmenu
-    nitrogen
+    feh
     dunst
     libnotify-tools
     alsa-utils
