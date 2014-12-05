@@ -51,6 +51,9 @@ default["i3"]["packages"] = value_for_platform_family(
     pavucontrol
     pulseaudio
     pulseaudio-utils
+    conky
+    conky-imlib2
+    conky-vim
   )
 )
 
