@@ -24,41 +24,22 @@ default["i3"]["packages"] = value_for_platform_family(
     i3lock
     i3status
     dmenu
-    nitrogen
-    dunst
-  ),
-  "ubuntu" => %w(
-    rxvt-unicode
-    i3
-    i3lock
-    i3status
-    dmenu
-    nitrogen
-    dunst
   ),
   "suse" => %w(
     rxvt-unicode
     i3
     i3lock
-    i3statuS
+    i3status
     dmenu
-    feh
-    dunst
-    libnotify-tools
-    alsa-utils
-    ImageMagick
-    geeqie
+
     pavucontrol
     pulseaudio
     pulseaudio-utils
-    conky
-    conky-imlib2
-    conky-vim
+
   )
 )
 
-default["i3"]["sysconfig_file"] = "/etc/sysconfig/windowmanager"
-
+default["i3"]["zypper"]["enabled"] = true
 default["i3"]["zypper"]["alias"] = "x11-windowmanagers"
 default["i3"]["zypper"]["title"] = "X11 Windowmanagers"
 default["i3"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/X11:/windowmanagers/openSUSE_#{node["platform_version"]}/"

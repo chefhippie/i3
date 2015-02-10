@@ -27,6 +27,10 @@ when "suse"
     title node["i3"]["zypper"]["title"]
 
     action :add
+
+    only_if do
+      node["i3"]["zypper"]["enabled"]
+    end
   end
 end
 
@@ -34,15 +38,4 @@ node["i3"]["packages"].each do |name|
   package name do
     action :install
   end
-end
-
-template node["i3"]["sysconfig_file"] do
-  source "sysconfig.conf.erb"
-  owner "root"
-  group "root"
-  mode 0644
-
-  variables(
-    node["i3"]
-  )
 end
