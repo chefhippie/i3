@@ -35,12 +35,11 @@ default["i3"]["packages"] = value_for_platform_family(
     pavucontrol
     pulseaudio
     pulseaudio-utils
-
   )
 )
 
 default["i3"]["zypper"]["enabled"] = true
 default["i3"]["zypper"]["alias"] = "x11-windowmanagers"
 default["i3"]["zypper"]["title"] = "X11 Windowmanagers"
-default["i3"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/X11:/windowmanagers/openSUSE_#{node["platform_version"]}/"
+default["i3"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/X11:/windowmanagers/openSUSE_#{node["platform_version"].to_i.to_s == node["platform_version"] ? "Tumbleweed" : node["platform_version"]}/"
 default["i3"]["zypper"]["key"] = "#{node["i3"]["zypper"]["repo"]}repodata/repomd.xml.key"
