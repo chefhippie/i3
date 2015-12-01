@@ -38,8 +38,22 @@ default["i3"]["packages"] = value_for_platform_family(
   )
 )
 
-default["i3"]["zypper"]["enabled"] = true
-default["i3"]["zypper"]["alias"] = "x11-windowmanagers"
-default["i3"]["zypper"]["title"] = "X11 Windowmanagers"
-default["i3"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/X11:/windowmanagers/openSUSE_#{node["platform_version"].to_i.to_s == node["platform_version"] ? "Tumbleweed" : node["platform_version"]}/"
-default["i3"]["zypper"]["key"] = "#{node["i3"]["zypper"]["repo"]}repodata/repomd.xml.key"
+case node["platform_family"]
+when "suse"
+  repo = case node["platform_version"]
+  when /\A13\.\d+\z/
+    "openSUSE_#{node["platform_version"]}"
+  when /\A42\.\d+\z/
+    "openSUSE_Leap_#{node["platform_version"]}"
+  when /\A\d{8}\z/
+    "openSUSE_Tumbleweed"
+  else
+    raise "Unsupported SUSE version"
+  end
+
+  default["i3"]["zypper"]["enabled"] = true
+  default["i3"]["zypper"]["alias"] = "x11-windowmanagers"
+  default["i3"]["zypper"]["title"] = "X11 Windowmanagers"
+  default["i3"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/X11:/windowmanagers/#{repo}/"
+  default["i3"]["zypper"]["key"] = "#{node["i3"]["zypper"]["repo"]}repodata/repomd.xml.key"
+end
